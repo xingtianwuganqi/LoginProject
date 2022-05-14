@@ -57,6 +57,11 @@ public class LoginViewController: BaseViewController,View {
         super.init(navi: NavigatorServiceType)
     }
     
+    // cocoapods 本地化需要加
+    public override func loadView() {
+        Bundle(for: type(of: self)).loadNibNamed("LoginProject.bundle/LoginViewController", owner: self, options: nil)
+    }
+
     required convenience init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

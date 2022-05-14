@@ -25,6 +25,13 @@ public class FindPageSecondController: BaseViewController,View {
     
     public typealias Reactor = FindPswdChangeReactor
     fileprivate var account: String
+    
+    
+    // cocoapods 本地化需要加
+    public override func loadView() {
+        Bundle(for: type(of: self)).loadNibNamed("LoginProject.bundle/FindPageSecondController", owner: self, options: nil)
+    }
+    
     public init(account: String,
          naviService: NavigatorServiceType) {
         self.account = account

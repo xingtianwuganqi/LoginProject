@@ -29,7 +29,9 @@ Pod::Spec.new do |spec|
   spec.source_files = "LoginProject/LoginPage/*.swift","LoginProject/LoginPage/**/*.swift"
   spec.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
 
-  spec.resources = "LoginProject/LoginPage/ViewController/*.{xib}"
+  spec.resource_bundles = {
+    'LoginProject' => ['LoginProject/LoginPage/ViewController/*.{xib}']
+  }
   
   spec.frameworks   = ["Foundation","UIKit"]
 

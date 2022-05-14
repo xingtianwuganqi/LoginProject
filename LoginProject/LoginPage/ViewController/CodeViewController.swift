@@ -27,6 +27,11 @@ public class CodeViewController: BaseViewController,View {
     
     public typealias Reactor = CodeViewReactor
     
+    // cocoapods 本地化需要加
+    public override func loadView() {
+        Bundle(for: type(of: self)).loadNibNamed("LoginProject.bundle/CodeViewController", owner: self, options: nil)
+    }
+    
     public init(navi: NavigatorServiceType,from: CodeFromType,phone: String? = nil) {
         super.init(navi: navi)
         self.fromType = from
