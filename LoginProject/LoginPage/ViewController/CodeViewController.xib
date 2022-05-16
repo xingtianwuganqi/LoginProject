@@ -16,7 +16,9 @@
                 <outlet property="codeCheckBtn" destination="Zph-ij-xJ0" id="hwz-Q5-cwX"/>
                 <outlet property="codeTextField" destination="a9v-OX-GQj" id="RVr-mO-7s4"/>
                 <outlet property="getCodeBtn" destination="BmS-Ao-y3V" id="0se-Jz-4Ii"/>
+                <outlet property="phoneIcon" destination="WkB-q0-plw" id="IIf-Ks-FFe"/>
                 <outlet property="phoneTextField" destination="oAA-mM-sbc" id="eW1-Ah-jjR"/>
+                <outlet property="pswdIcon" destination="mKg-yO-YLH" id="SAi-ph-Dte"/>
                 <outlet property="titleLab" destination="M5v-0i-HIW" id="K6R-VV-lQS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

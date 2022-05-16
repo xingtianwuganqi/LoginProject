@@ -59,19 +59,19 @@ extension LoginApi: BaseTargetType {
     public var path: String {
         switch self {
         case .login:
-            return "/api/v1/login/"
+            return AppHelper.shared.url_config["login_login"] ?? "" //"/api/v1/login/"
         case .register:
-            return "/api/v1/register/"
+            return AppHelper.shared.url_config["login_register"] ?? ""// "/api/v1/register/"
         case .updateAccount:
-            return "/api/v1/updatepswd/"
+            return AppHelper.shared.url_config["login_updatepswd"] ?? "" //"/api/v1/updatepswd/"
         case .getVerificationCode:
-            return "/api/v2/tecent/code/"
+            return AppHelper.shared.url_config["login_getcode"] ?? "" //"/api/v2/tecent/code/"
         case .checkCode:
-            return "/api/v2/tecent/check/"
+            return AppHelper.shared.url_config["login_checkcode"] ?? "" //"/api/v2/tecent/check/"
         case .checkPhone:
-            return "/api/v2/login/checkphone/"
+            return AppHelper.shared.url_config["login_checkphone"] ?? "" //"/api/v2/login/checkphone/"
         case .bindPhone:
-            return "/api/v2/login/bindphone/"
+            return AppHelper.shared.url_config["login_bindphone"] ?? "" //"/api/v2/login/bindphone/"
         }
     }
 }

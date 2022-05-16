@@ -14,9 +14,14 @@
                 <outlet property="agreeMentBtn" destination="NSK-Yb-grY" id="pn1-uG-hf2"/>
                 <outlet property="backScroll" destination="el0-Po-Yzo" id="wCj-iF-FAN"/>
                 <outlet property="backView" destination="c8E-Wb-olT" id="hXs-zG-8yU"/>
+                <outlet property="confiEyeBtn" destination="9u8-lS-mvJ" id="iH1-hI-FCR"/>
+                <outlet property="confiIcon" destination="2AN-r5-A1v" id="Bon-V2-jGG"/>
                 <outlet property="confirmTextField" destination="NKL-Te-fS8" id="ZLu-Gi-2QY"/>
                 <outlet property="loginBtn" destination="Zph-ij-xJ0" id="urg-Sc-ATR"/>
+                <outlet property="phoneIcon" destination="WkB-q0-plw" id="43p-3U-fpB"/>
                 <outlet property="phoneTextField" destination="oAA-mM-sbc" id="I8D-8x-H6q"/>
+                <outlet property="pswdEyeBtn" destination="pOe-CB-PFE" id="gco-2O-TBc"/>
+                <outlet property="pswdIcon" destination="mKg-yO-YLH" id="VRB-f6-zFd"/>
                 <outlet property="pswdTextField" destination="a9v-OX-GQj" id="JP5-eD-LrL"/>
                 <outlet property="stackView" destination="3H9-uf-RoV" id="dc2-1A-YV4"/>
                 <outlet property="titleLab" destination="M5v-0i-HIW" id="uuy-vn-FY3"/>

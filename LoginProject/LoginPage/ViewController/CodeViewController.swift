@@ -21,6 +21,9 @@ public class CodeViewController: BaseViewController,View {
     @IBOutlet weak var titleLab: UILabel!
     @IBOutlet weak var getCodeBtn: UIButton!
     
+    @IBOutlet weak var phoneIcon: UIImageView!
+    @IBOutlet weak var pswdIcon: UIImageView!
+    
     var fromType: CodeFromType?
     var phoneNum: String?
     var timeObserve: DispatchSourceTimer? //定时任务
@@ -63,6 +66,9 @@ public class CodeViewController: BaseViewController,View {
         
         self.codeCheckBtn.backgroundColor = UIColor.color(.system)
         self.codeCheckBtn.setTitleColor(.white, for: .normal)
+        
+        self.phoneIcon.image = UIImage(named: "icon_login_phone")
+        self.pswdIcon.image = UIImage(named: "icon_login_pswd")
         
         if self.fromType == .checkPhone {
             self.codeCheckBtn.setTitle("校验手机号", for: .normal)

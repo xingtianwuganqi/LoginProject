@@ -14,9 +14,12 @@
                 <outlet property="agreementBtn" destination="dSR-dz-GDY" id="kwd-JB-qyh"/>
                 <outlet property="backScroll" destination="ylV-2q-DTa" id="Yi4-os-NET"/>
                 <outlet property="backView" destination="Pmm-eI-ZMQ" id="dOX-Jj-3yx"/>
+                <outlet property="eyeBtn" destination="d1d-IZ-crv" id="G7G-iy-Fv1"/>
                 <outlet property="forgetBtn" destination="0g5-Na-MO0" id="8SW-Bk-O1F"/>
                 <outlet property="loginBtn" destination="uqJ-xa-Ieg" id="Zem-jZ-KDV"/>
+                <outlet property="phoneIcon" destination="EQE-fn-bLx" id="Tq9-yz-1Li"/>
                 <outlet property="phoneTextField" destination="KxS-SM-h9E" id="kCB-ke-igg"/>
+                <outlet property="pswdIcon" destination="Uze-6y-4r0" id="d44-sg-SWf"/>
                 <outlet property="pswdTextField" destination="BWG-Se-dvR" id="Y9W-MB-ndS"/>
                 <outlet property="registerBtn" destination="FkK-oZ-v6c" id="gtB-6g-psH"/>
                 <outlet property="stackView" destination="INr-1D-KsH" id="8c5-Fq-BLa"/>
@@ -42,7 +45,7 @@
                                         <constraint firstAttribute="width" constant="14" id="hQd-qN-3WU"/>
                                     </constraints>
                                 </imageView>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_login_pswd" translatesAutoresizingMaskIntoConstraints="NO" id="Uze-6y-4r0">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_login_pswd" translatesAutoresizingMaskIntoConstraints="NO" id="Uze-6y-4r0" userLabel="icon_login_psd">
                                     <rect key="frame" x="36.5" y="180" width="17" height="17"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="17" id="cji-GG-gyh"/>

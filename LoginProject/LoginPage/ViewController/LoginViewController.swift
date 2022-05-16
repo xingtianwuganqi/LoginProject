@@ -25,6 +25,9 @@ public class LoginViewController: BaseViewController,View {
     @IBOutlet weak var titleLab: UILabel!
     @IBOutlet weak var agreementBtn: UIButton!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var phoneIcon: UIImageView!
+    @IBOutlet weak var pswdIcon: UIImageView!
+    @IBOutlet weak var eyeBtn: UIButton!
     
     public typealias Reactor = LoginViewReactor
     
@@ -84,6 +87,9 @@ public class LoginViewController: BaseViewController,View {
         self.titleLab.font = UIFont.init(name: "Arial-BoldItalicMT", size: 24)
         self.titleLab.textColor = UIColor.color(.system)
         
+        self.phoneIcon.image = UIImage(named: "icon_login_phone")
+        self.pswdIcon.image = UIImage(named: "icon_login_pswd")
+        
         self.loginBtn.setTitle("登录", for: .normal)
         self.loginBtn.backgroundColor = UIColor.color(.system)
         self.loginBtn.setTitleColor(.white, for: .normal)
@@ -108,6 +114,12 @@ public class LoginViewController: BaseViewController,View {
         } else {
             // Fallback on earlier versions
         }
+        
+        self.eyeBtn.setImage(UIImage(named: "icon_eye_o"), for: .normal)
+        self.eyeBtn.setImage(UIImage(named: "icon_eye_b"), for: .selected)
+        
+        self.agreementBtn.setImage(UIImage(named: "icon_lo_sele"), for: .selected)
+        self.agreementBtn.setImage(UIImage(named: "icon_lo_unse"), for: .normal)
 
         
         self.agreementBtn.isSelected = true

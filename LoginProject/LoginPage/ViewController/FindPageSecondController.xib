@@ -13,8 +13,12 @@
             <connections>
                 <outlet property="backScroll" destination="E7g-j7-zje" id="Oyi-Hu-4Ac"/>
                 <outlet property="backView" destination="4Kd-er-BDS" id="8wH-G2-7rZ"/>
+                <outlet property="confiEyeBtn" destination="pQ9-1Z-Er6" id="Yh9-yT-SXE"/>
+                <outlet property="confiIcon" destination="jvO-WG-Ujv" id="ZoQ-Na-98a"/>
                 <outlet property="confirmTextField" destination="Oa0-IZ-ucK" id="TFc-fe-Wdm"/>
                 <outlet property="loginBtn" destination="USI-Pc-oXB" id="sfi-jE-Uo7"/>
+                <outlet property="pswdEyeBtn" destination="pQ9-1Z-Er6" id="OEi-zR-1Ic"/>
+                <outlet property="pswdIcon" destination="BY6-H4-sSH" id="XPr-mD-JE1"/>
                 <outlet property="pswdTextField" destination="JTb-Qi-Dfx" id="wgf-vd-DEF"/>
                 <outlet property="titleLab" destination="OJA-Hx-nYj" id="R1C-Mb-CLZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
