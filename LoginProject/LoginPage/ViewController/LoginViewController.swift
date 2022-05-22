@@ -334,8 +334,6 @@ extension LoginViewController {
         
         reactor.state.map {
             $0.msg
-        }.filter { msg in
-            return msg != nil
         }.subscribe(onNext: { msg in
             if let message = msg {
                 MBProgressHUD.xy_show(message)
