@@ -116,15 +116,15 @@ public class CodeViewController: BaseViewController,View {
         self.codeTextField.resignFirstResponder()
         
         guard let phone = self.phoneTextField.text,phone.count > 0 else {
-            MBProgressHUD.xy_show("请输入手机号")
+            self.view.xy_show("请输入手机号")
             return
         }
         guard phone.et.isChinaMobile else {
-            MBProgressHUD.xy_show("请输入正确的手机号")
+            self.view.xy_show("请输入正确的手机号")
             return
         }
         guard let code = self.codeTextField.text,code.count > 0 else {
-            MBProgressHUD.xy_show("请输入验证码")
+            self.view.xy_show("请输入验证码")
             return
         }
         if self.fromType == .checkPhone {
@@ -145,11 +145,11 @@ public class CodeViewController: BaseViewController,View {
         self.codeTextField.resignFirstResponder()
         
         guard let phone = self.phoneTextField.text,phone.count > 0 else {
-            MBProgressHUD.xy_show("请输入手机号")
+            self.view.xy_show("请输入手机号")
             return
         }
         guard phone.et.isChinaMobile else {
-            MBProgressHUD.xy_show("请输入正确的手机号")
+            self.view.xy_show("请输入正确的手机号")
             return
         }
         self.getVerificationCode(phone: phone)
@@ -236,7 +236,7 @@ extension CodeViewController {
         }.distinctUntilChanged()
         .subscribe(onNext: { msg in
             if let message = msg {
-                MBProgressHUD.xy_show(message)
+                self.view.xy_show(message)
             }
         }).disposed(by: disposeBag)
         
