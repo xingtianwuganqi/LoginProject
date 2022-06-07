@@ -170,27 +170,27 @@ public class RegisterViewController: BaseViewController,View {
         self.confirmTextField.resignFirstResponder()
         
         guard self.agreeMentBtn.isSelected else {
-            MBProgressHUD.xy_show("请勾选用户协议")
+            self.view.xy_show("请勾选用户协议")
             return
         }
         guard let account = self.phoneTextField.text,account.count > 0 else {
-            MBProgressHUD.xy_show("请输入账号")
+            self.view.xy_show("请输入账号")
             return
         }
         guard account.et.isChinaMobile else {
-            MBProgressHUD.xy_show("请输入有效账号")
+            self.view.xy_show("请输入有效账号")
             return
         }
         guard let pswd = self.pswdS1,pswd.et.isValidPassword else {
-            MBProgressHUD.xy_show("请输入6位或6位以上密码")
+            self.view.xy_show("请输入6位或6位以上密码")
             return
         }
         guard let confrim = self.confrimS2,confrim.et.isValidPassword else {
-            MBProgressHUD.xy_show("请输入6位或6位以上密码")
+            self.view.xy_show("请输入6位或6位以上密码")
             return
         }
         guard pswd == confrim else {
-            MBProgressHUD.xy_show("两次输入密码不相同")
+            self.view.xy_show("两次输入密码不相同")
             return
         }
         
@@ -297,7 +297,7 @@ extension RegisterViewController {
             return msg != nil
         }.subscribe(onNext: { msg in
             if let message = msg {
-                MBProgressHUD.xy_show(message)
+                self.view.xy_show(message)
             }
         }).disposed(by: disposeBag)
         

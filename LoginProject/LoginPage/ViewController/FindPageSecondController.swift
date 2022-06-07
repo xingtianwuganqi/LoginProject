@@ -131,15 +131,15 @@ public class FindPageSecondController: BaseViewController,View {
     @IBAction func confirmBtnClick(_ sender: Any) {
         self.resignFirst()
         guard let pswd = self.pswdS1,pswd.et.isValidPassword else {
-            MBProgressHUD.xy_show("请输入6位或6位以上密码")
+            self.view.xy_show("请输入6位或6位以上密码")
             return
         }
         guard let confrim = self.confrimS2,confrim.et.isValidPassword else {
-            MBProgressHUD.xy_show("请再次输入密码")
+            self.view.xy_show("请再次输入密码")
             return
         }
         guard pswd == confrim else {
-            MBProgressHUD.xy_show("两次输入密码不相同")
+            self.view.xy_show("两次输入密码不相同")
             return
         }
         
@@ -183,13 +183,13 @@ extension FindPageSecondController: UITextFieldDelegate {
         }
         .subscribe(onNext: { result in
             if result == true {
-                MBProgressHUD.xy_show("修改成功")
+                self.view.xy_show("修改成功")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     self.navigationController?.popToRootViewController(animated: true)
                 }
                 
             }else{
-                MBProgressHUD.xy_show(reactor.currentState.errorMsg ?? "修改失败")
+                self.view.xy_show(reactor.currentState.errorMsg ?? "修改失败")
             }
         }).disposed(by: disposeBag)
         

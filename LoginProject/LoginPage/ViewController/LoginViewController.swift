@@ -223,20 +223,20 @@ public class LoginViewController: BaseViewController,View {
     
     @IBAction func loginBtnClick(_ sender: Any) {
         guard self.agreementBtn.isSelected else {
-            MBProgressHUD.xy_show("请勾选用户协议")
+            self.view.xy_show("请勾选用户协议")
             return
         }
         
         guard let account = self.phoneTextField.text,account.count > 0 else {
-            MBProgressHUD.xy_show("请输入账号")
+            self.view.xy_show("请输入账号")
             return
         }
         guard account.et.isChinaMobile else {
-            MBProgressHUD.xy_show("请输入有效账号")
+            self.view.xy_show("请输入有效账号")
             return
         }
         guard let pswd = self.pswdTextField.text,pswd.et.isValidPassword else {
-            MBProgressHUD.xy_show("请输入6位或6位以上密码")
+            self.view.xy_show("请输入6位或6位以上密码")
             return
         }
                 
@@ -336,7 +336,7 @@ extension LoginViewController {
             $0.msg
         }.subscribe(onNext: { msg in
             if let message = msg {
-                MBProgressHUD.xy_show(message)
+                self.view.xy_show(message)
             }
         }).disposed(by: disposeBag)
         
