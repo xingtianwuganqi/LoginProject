@@ -59,14 +59,14 @@ public class FindPageSecondController: BaseViewController,View {
         self.titleLab.font = UIFont.init(name: "Arial-BoldItalicMT", size: 24)
         self.titleLab.textColor = UIColor.color(.system)
         
-        self.pswdIcon.image = UIImage(named: "icon_login_pswd")
-        self.confiIcon.image = UIImage(named: "icon_login_pswd")
+        self.pswdIcon.image = LGResourceBundle.getImage("icon_login_pswd")
+        self.confiIcon.image = LGResourceBundle.getImage("icon_login_pswd")
         
-        self.pswdEyeBtn.setImage(UIImage(named: "icon_eye_o"), for: .normal)
-        self.pswdEyeBtn.setImage(UIImage(named: "icon_eye_b"), for: .selected)
+        self.pswdEyeBtn.setImage(LGResourceBundle.getImage("icon_eye_o"), for: .normal)
+        self.pswdEyeBtn.setImage(LGResourceBundle.getImage("icon_eye_b"), for: .selected)
         
-        self.confiEyeBtn.setImage(UIImage(named: "icon_eye_o"), for: .normal)
-        self.confiEyeBtn.setImage(UIImage(named: "icon_eye_b"), for: .selected)
+        self.confiEyeBtn.setImage(LGResourceBundle.getImage("icon_eye_o"), for: .normal)
+        self.confiEyeBtn.setImage(LGResourceBundle.getImage("icon_eye_b"), for: .selected)
         
         self.loginBtn.setTitle("确定", for: .normal)
         self.loginBtn.backgroundColor = UIColor.color(.system)

@@ -67,8 +67,8 @@ public class CodeViewController: BaseViewController,View {
         self.codeCheckBtn.backgroundColor = UIColor.color(.system)
         self.codeCheckBtn.setTitleColor(.white, for: .normal)
         
-        self.phoneIcon.image = UIImage(named: "icon_login_phone")
-        self.pswdIcon.image = UIImage(named: "icon_login_pswd")
+        self.phoneIcon.image = LGResourceBundle.getImage("icon_login_phone")
+        self.pswdIcon.image = LGResourceBundle.getImage("icon_login_pswd")
         
         if self.fromType == .checkPhone {
             self.codeCheckBtn.setTitle("校验手机号", for: .normal)

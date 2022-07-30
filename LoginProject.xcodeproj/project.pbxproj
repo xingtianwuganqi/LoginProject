@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		6268044BBBD286284F799284 /* Pods_LoginProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A08C94C8F915D9E7FA6559 /* Pods_LoginProject.framework */; };
+		C40A4FED2894377E0025572F /* NavigatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A4FEC2894377E0025572F /* NavigatorService.swift */; };
+		C40A4FF12894D6D50025572F /* LoginIconBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C40A4FF02894D6D50025572F /* LoginIconBundle.bundle */; };
 		C4A5CB0E282D26B20043D40F /* LoginNavigatorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A5CB0D282D26B20043D40F /* LoginNavigatorItem.swift */; };
 		C4D0C0F6282BFEEE00AD00B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D0C0F5282BFEEE00AD00B7 /* AppDelegate.swift */; };
-		C4D0C0FA282BFEEE00AD00B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D0C0F9282BFEEE00AD00B7 /* ViewController.swift */; };
+		C4D0C0FA282BFEEE00AD00B7 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D0C0F9282BFEEE00AD00B7 /* TestViewController.swift */; };
 		C4D0C0FD282BFEEE00AD00B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4D0C0FB282BFEEE00AD00B7 /* Main.storyboard */; };
 		C4D0C0FF282BFEF000AD00B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4D0C0FE282BFEF000AD00B7 /* Assets.xcassets */; };
 		C4D0C102282BFEF000AD00B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4D0C100282BFEF000AD00B7 /* LaunchScreen.storyboard */; };
@@ -33,10 +35,12 @@
 		48A08C94C8F915D9E7FA6559 /* Pods_LoginProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6808B0310FB04AA254D57BAB /* Pods-LoginProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginProject.release.xcconfig"; path = "Target Support Files/Pods-LoginProject/Pods-LoginProject.release.xcconfig"; sourceTree = "<group>"; };
 		A1547B527FFE1A1B1234EDD6 /* Pods-LoginProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginProject.debug.xcconfig"; path = "Target Support Files/Pods-LoginProject/Pods-LoginProject.debug.xcconfig"; sourceTree = "<group>"; };
+		C40A4FEC2894377E0025572F /* NavigatorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatorService.swift; sourceTree = "<group>"; };
+		C40A4FF02894D6D50025572F /* LoginIconBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LoginIconBundle.bundle; sourceTree = "<group>"; };
 		C4A5CB0D282D26B20043D40F /* LoginNavigatorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigatorItem.swift; sourceTree = "<group>"; };
 		C4D0C0F2282BFEEE00AD00B7 /* LoginProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4D0C0F5282BFEEE00AD00B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C4D0C0F9282BFEEE00AD00B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C4D0C0F9282BFEEE00AD00B7 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		C4D0C0FC282BFEEE00AD00B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4D0C0FE282BFEF000AD00B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4D0C101282BFEF000AD00B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,6 +81,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C40A4FEF2894D64E0025572F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C40A4FF02894D6D50025572F /* LoginIconBundle.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C4D0C0E9282BFEEE00AD00B7 = {
 			isa = PBXGroup;
 			children = (
@@ -100,7 +112,8 @@
 			children = (
 				C4D0C10A282C019800AD00B7 /* LoginPage */,
 				C4D0C0F5282BFEEE00AD00B7 /* AppDelegate.swift */,
-				C4D0C0F9282BFEEE00AD00B7 /* ViewController.swift */,
+				C4D0C0F9282BFEEE00AD00B7 /* TestViewController.swift */,
+				C40A4FEC2894377E0025572F /* NavigatorService.swift */,
 				C4D0C0FB282BFEEE00AD00B7 /* Main.storyboard */,
 				C4D0C0FE282BFEF000AD00B7 /* Assets.xcassets */,
 				C4D0C100282BFEF000AD00B7 /* LaunchScreen.storyboard */,
@@ -112,10 +125,11 @@
 		C4D0C10A282C019800AD00B7 /* LoginPage */ = {
 			isa = PBXGroup;
 			children = (
-				C4A5CB0D282D26B20043D40F /* LoginNavigatorItem.swift */,
+				C4D0C116282C019800AD00B7 /* ViewController */,
 				C4D0C10D282C019800AD00B7 /* ViewModels */,
 				C4D0C114282C019800AD00B7 /* Api */,
-				C4D0C116282C019800AD00B7 /* ViewController */,
+				C40A4FEF2894D64E0025572F /* Resources */,
+				C4A5CB0D282D26B20043D40F /* LoginNavigatorItem.swift */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";
@@ -224,6 +238,7 @@
 			files = (
 				C4D0C102282BFEF000AD00B7 /* LaunchScreen.storyboard in Resources */,
 				C4D0C128282C019800AD00B7 /* CodeViewController.xib in Resources */,
+				C40A4FF12894D6D50025572F /* LoginIconBundle.bundle in Resources */,
 				C4D0C0FF282BFEF000AD00B7 /* Assets.xcassets in Resources */,
 				C4D0C127282C019800AD00B7 /* LoginViewController.xib in Resources */,
 				C4D0C0FD282BFEEE00AD00B7 /* Main.storyboard in Resources */,
@@ -286,7 +301,8 @@
 				C4A5CB0E282D26B20043D40F /* LoginNavigatorItem.swift in Sources */,
 				C4D0C12C282C019800AD00B7 /* RegisterViewController.swift in Sources */,
 				C4D0C120282C019800AD00B7 /* RegisterViewReactor.swift in Sources */,
-				C4D0C0FA282BFEEE00AD00B7 /* ViewController.swift in Sources */,
+				C40A4FED2894377E0025572F /* NavigatorService.swift in Sources */,
+				C4D0C0FA282BFEEE00AD00B7 /* TestViewController.swift in Sources */,
 				C4D0C12A282C019800AD00B7 /* FindPageSecondController.swift in Sources */,
 				C4D0C124282C019800AD00B7 /* LoginApi.swift in Sources */,
 				C4D0C0F6282BFEEE00AD00B7 /* AppDelegate.swift in Sources */,

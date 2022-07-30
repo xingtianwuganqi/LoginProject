@@ -47,7 +47,7 @@ public class LoginViewController: BaseViewController,View {
     
     lazy var backBtn: UIButton = {
         let button = UIButton.init(type: .custom)
-        button.setImage(UIImage(named: "icon_a_back"), for: .normal)
+        button.setImage(LGResourceBundle.getImage("icon_a_back"), for: .normal)
         button.addTarget(self, action: #selector(popAction), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         return button
@@ -87,8 +87,8 @@ public class LoginViewController: BaseViewController,View {
         self.titleLab.font = UIFont.init(name: "Arial-BoldItalicMT", size: 24)
         self.titleLab.textColor = UIColor.color(.system)
         
-        self.phoneIcon.image = UIImage(named: "icon_login_phone")
-        self.pswdIcon.image = UIImage(named: "icon_login_pswd")
+        self.phoneIcon.image = LGResourceBundle.getImage("icon_login_phone")
+        self.pswdIcon.image = LGResourceBundle.getImage("icon_login_pswd")
         
         self.loginBtn.setTitle("登录", for: .normal)
         self.loginBtn.backgroundColor = UIColor.color(.system)
@@ -115,11 +115,11 @@ public class LoginViewController: BaseViewController,View {
             // Fallback on earlier versions
         }
         
-        self.eyeBtn.setImage(UIImage(named: "icon_eye_o"), for: .normal)
-        self.eyeBtn.setImage(UIImage(named: "icon_eye_b"), for: .selected)
+        self.eyeBtn.setImage(LGResourceBundle.getImage("icon_eye_o"), for: .normal)
+        self.eyeBtn.setImage(LGResourceBundle.getImage("icon_eye_b"), for: .selected)
         
-        self.agreementBtn.setImage(UIImage(named: "icon_lo_sele"), for: .selected)
-        self.agreementBtn.setImage(UIImage(named: "icon_lo_unse"), for: .normal)
+        self.agreementBtn.setImage(LGResourceBundle.getImage("icon_lo_sele"), for: .selected)
+        self.agreementBtn.setImage(LGResourceBundle.getImage("icon_lo_unse"), for: .normal)
 
         
         self.agreementBtn.isSelected = true

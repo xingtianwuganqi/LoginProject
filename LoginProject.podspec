@@ -30,7 +30,8 @@ Pod::Spec.new do |spec|
   spec.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
 
   spec.resource_bundles = {
-    'LoginProject' => ['LoginProject/LoginPage/ViewController/*.{xib}']
+    'LoginProject' => ['LoginProject/LoginPage/ViewController/*.{xib}'],
+    'LoginIconBundle' => ['LoginProject/LoginPage/Resources/*.bundle/*.png']
   }
   
   spec.frameworks   = ["Foundation","UIKit"]

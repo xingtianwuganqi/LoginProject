@@ -76,19 +76,19 @@ public class RegisterViewController: BaseViewController,View {
         self.titleLab.font = UIFont.init(name: "Arial-BoldItalicMT", size: 24)
         self.titleLab.textColor = UIColor.color(.system)
         
-        self.phoneIcon.image = UIImage(named: "icon_login_phone")
-        self.pswdIcon.image = UIImage(named: "icon_login_pswd")
-        self.confiIcon.image = UIImage(named: "icon_login_pswd")
+        self.phoneIcon.image = LGResourceBundle.getImage("icon_login_phone")
+        self.pswdIcon.image = LGResourceBundle.getImage("icon_login_pswd")
+        self.confiIcon.image = LGResourceBundle.getImage("icon_login_pswd")
 
         
-        self.pswdEyeBtn.setImage(UIImage(named: "icon_eye_o"), for: .normal)
-        self.pswdEyeBtn.setImage(UIImage(named: "icon_eye_b"), for: .selected)
+        self.pswdEyeBtn.setImage(LGResourceBundle.getImage("icon_eye_o"), for: .normal)
+        self.pswdEyeBtn.setImage(LGResourceBundle.getImage("icon_eye_b"), for: .selected)
         
-        self.confiEyeBtn.setImage(UIImage(named: "icon_eye_o"), for: .normal)
-        self.confiEyeBtn.setImage(UIImage(named: "icon_eye_b"), for: .selected)
+        self.confiEyeBtn.setImage(LGResourceBundle.getImage("icon_eye_o"), for: .normal)
+        self.confiEyeBtn.setImage(LGResourceBundle.getImage("icon_eye_b"), for: .selected)
         
-        self.agreeMentBtn.setImage(UIImage(named: "icon_lo_sele"), for: .selected)
-        self.agreeMentBtn.setImage(UIImage(named: "icon_lo_unse"), for: .normal)
+        self.agreeMentBtn.setImage(LGResourceBundle.getImage("icon_lo_sele"), for: .selected)
+        self.agreeMentBtn.setImage(LGResourceBundle.getImage("icon_lo_unse"), for: .normal)
         
         self.loginBtn.setTitle("注册并登录", for: .normal)
         self.loginBtn.backgroundColor = UIColor.color(.system)
