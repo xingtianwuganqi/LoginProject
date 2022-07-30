@@ -86,6 +86,7 @@ public class LoginViewController: BaseViewController,View {
         
         self.titleLab.font = UIFont.init(name: "Arial-BoldItalicMT", size: 24)
         self.titleLab.textColor = UIColor.color(.system)
+        self.titleLab.text = AppIdentifier.rawValue
         
         self.phoneIcon.image = LGResourceBundle.getImage("icon_login_phone")
         self.pswdIcon.image = LGResourceBundle.getImage("icon_login_pswd")

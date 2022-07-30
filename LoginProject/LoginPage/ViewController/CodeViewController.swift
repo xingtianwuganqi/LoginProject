@@ -63,6 +63,7 @@ public class CodeViewController: BaseViewController,View {
         
         self.titleLab.font = UIFont.init(name: "Arial-BoldItalicMT", size: 24)
         self.titleLab.textColor = UIColor.color(.system)
+        self.titleLab.text = AppIdentifier.rawValue
         
         self.codeCheckBtn.backgroundColor = UIColor.color(.system)
         self.codeCheckBtn.setTitleColor(.white, for: .normal)

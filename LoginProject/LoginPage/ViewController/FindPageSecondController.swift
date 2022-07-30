@@ -58,6 +58,7 @@ public class FindPageSecondController: BaseViewController,View {
         
         self.titleLab.font = UIFont.init(name: "Arial-BoldItalicMT", size: 24)
         self.titleLab.textColor = UIColor.color(.system)
+        self.titleLab.text = AppIdentifier.rawValue
         
         self.pswdIcon.image = LGResourceBundle.getImage("icon_login_pswd")
         self.confiIcon.image = LGResourceBundle.getImage("icon_login_pswd")
