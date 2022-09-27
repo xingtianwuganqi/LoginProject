@@ -23,7 +23,7 @@ Pod::Spec.new do |spec|
   
   spec.author       = { "jingjun" => "rxswift@126.com" }
   
-  spec.platform     = :ios, "10.0"
+  spec.platform     = :ios, "11.0"
 
   spec.source       = { :git => "https://github.com/xingtianwuganqi/LoginProject.git", :tag => "#{spec.version}" }
   spec.source_files = "LoginProject/LoginPage/*.swift","LoginProject/LoginPage/**/*.swift"
