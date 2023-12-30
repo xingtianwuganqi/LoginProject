@@ -19,11 +19,11 @@ Pod::Spec.new do |spec|
   spec.homepage     = "https://github.com/xingtianwuganqi/LoginProject.git"
 
   spec.license      = { :type => "MIT", :file => "LICENSE" }
-  spec.swift_versions = ['5.0', '5.1', '5.2', '5.3']
+  spec.swift_versions = ['5.8', '5.9']
   
   spec.author       = { "jingjun" => "rxswift@126.com" }
   
-  spec.platform     = :ios, "11.0"
+  spec.platform     = :ios, "13.0"
 
   spec.source       = { :git => "https://github.com/xingtianwuganqi/LoginProject.git", :tag => "#{spec.version}" }
   spec.source_files = "LoginProject/LoginPage/*.swift","LoginProject/LoginPage/**/*.swift"
@@ -37,8 +37,5 @@ Pod::Spec.new do |spec|
   spec.frameworks   = ["Foundation","UIKit"]
 
   spec.dependency 'BasicProject'
-  
-#  spec.ios.deployment_target = "11.0"
-
 
 end
