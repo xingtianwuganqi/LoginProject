@@ -32,9 +32,9 @@ public class FindPageSecondController: BaseViewController,View {
     
     
     // cocoapods 本地化需要加
-    public override func loadView() {
-        Bundle(for: type(of: self)).loadNibNamed("LoginProject.bundle/FindPageSecondController", owner: self, options: nil)
-    }
+//    public override func loadView() {
+//        Bundle(for: type(of: self)).loadNibNamed("LoginProject.bundle/FindPageSecondController", owner: self, options: nil)
+//    }
     
     public init(account: String,
          naviService: NavigatorServiceType) {
