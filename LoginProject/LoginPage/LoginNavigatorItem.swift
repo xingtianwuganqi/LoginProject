@@ -41,4 +41,14 @@ public struct LGResourceBundle {
         let image = UIImage.init(named: "\(imageName)@3x" , in: LGResourceBundle.getBundleByName(classClass: LoginViewController.self, bundleName: "LoginIconBundle"), compatibleWith: nil)
         return image
     }
+    
+    static func loadBundleImage(_ imageName: String) -> UIImage? {
+        let bundle = Bundle(for: LoginViewController.self)
+        if let imagePath = bundle.path(forResource: "\(imageName)@3x", ofType: "png", inDirectory: "LoginIconBundle.bundle") {
+            let image = UIImage(contentsOfFile: imagePath)
+            return image
+        }else{
+            return nil
+        }
+    }
 }

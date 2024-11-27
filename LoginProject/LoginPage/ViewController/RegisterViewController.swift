@@ -35,9 +35,9 @@ public class RegisterViewController: BaseViewController,View {
     public typealias Reactor = RegisterViewReactor
     
     // cocoapods 本地化需要加
-//    public override func loadView() {
-//        Bundle(for: type(of: self)).loadNibNamed("LoginProject.bundle/RegisterViewController", owner: self, options: nil)
-//    }
+    public override func loadView() {
+        Bundle(for: type(of: self)).loadNibNamed("LoginProject.bundle/RegisterViewController", owner: self, options: nil)
+    }
     
     
     public init(navi: NavigatorServiceType, phone: String) {
