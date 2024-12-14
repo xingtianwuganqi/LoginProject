@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,7 +33,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylV-2q-DTa">
-                    <rect key="frame" x="0.0" y="44" width="414" height="456.5"/>
+                    <rect key="frame" x="0.0" y="48" width="414" height="456.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pmm-eI-ZMQ">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="456.5"/>
@@ -131,10 +131,6 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="20" id="hvk-L8-uWD"/>
                                             </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="imageForNormal" value="icon_lo_unse"/>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="imageForSelected" value="icon_lo_sele"/>
-                                            </userDefinedRuntimeAttributes>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -158,10 +154,6 @@
                                         <constraint firstAttribute="width" constant="30" id="LbB-Me-DY3"/>
                                         <constraint firstAttribute="height" constant="30" id="egS-vM-Lsk"/>
                                     </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="image" keyPath="imageForNormal" value="icon_eye_o"/>
-                                        <userDefinedRuntimeAttribute type="image" keyPath="imageForSelected" value="icon_eye_b"/>
-                                    </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="changeBtnClick:" destination="-1" eventType="touchUpInside" id="f26-Cn-RhC"/>
                                     </connections>
@@ -228,14 +220,10 @@
         </view>
     </objects>
     <resources>
-        <image name="icon_eye_b" width="16" height="16"/>
-        <image name="icon_eye_o" width="16" height="16"/>
-        <image name="icon_lo_sele" width="16" height="16"/>
-        <image name="icon_lo_unse" width="16" height="16"/>
         <image name="icon_login_phone" width="13.5" height="18.5"/>
         <image name="icon_login_pswd" width="15.5" height="16"/>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
