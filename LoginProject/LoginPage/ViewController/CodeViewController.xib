@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,6 +19,7 @@
                 <outlet property="phoneIcon" destination="WkB-q0-plw" id="IIf-Ks-FFe"/>
                 <outlet property="phoneTextField" destination="oAA-mM-sbc" id="eW1-Ah-jjR"/>
                 <outlet property="pswdIcon" destination="mKg-yO-YLH" id="SAi-ph-Dte"/>
+                <outlet property="remindButton" destination="lRH-rK-KNJ" id="aJZ-kB-lFS"/>
                 <outlet property="titleLab" destination="M5v-0i-HIW" id="K6R-VV-lQS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,10 +30,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="el0-Po-Yzo">
-                    <rect key="frame" x="0.0" y="44" width="414" height="518"/>
+                    <rect key="frame" x="0.0" y="48" width="414" height="514"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8E-Wb-olT">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="518"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="514"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_login_phone" translatesAutoresizingMaskIntoConstraints="NO" id="WkB-q0-plw">
                                     <rect key="frame" x="38" y="118" width="14" height="18"/>
@@ -47,13 +49,13 @@
                                         <constraint firstAttribute="height" constant="17" id="fuZ-S4-8nJ"/>
                                     </constraints>
                                 </imageView>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oAA-mM-sbc">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号或邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oAA-mM-sbc">
                                     <rect key="frame" x="66" y="114.5" width="310" height="25"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="1Jd-8B-3lR"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9v-OX-GQj">
                                     <rect key="frame" x="66" y="176" width="200" height="25"/>
@@ -107,6 +109,17 @@
                                         <action selector="getCodeAction:" destination="-1" eventType="touchUpInside" id="Ufr-OY-muk"/>
                                     </connections>
                                 </button>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRH-rK-KNJ">
+                                    <rect key="frame" x="336" y="107" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="hpC-7V-GOb"/>
+                                        <constraint firstAttribute="height" constant="40" id="lJl-JB-y4d"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="remindButtonClick:" destination="-1" eventType="touchUpInside" id="Asv-eM-oJU"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
@@ -117,6 +130,7 @@
                                 <constraint firstItem="B8H-XR-evy" firstAttribute="leading" secondItem="c8E-Wb-olT" secondAttribute="leading" constant="38" id="CZD-bF-kOp"/>
                                 <constraint firstItem="BmS-Ao-y3V" firstAttribute="trailing" secondItem="B8H-XR-evy" secondAttribute="trailing" id="Cfc-Oc-kma"/>
                                 <constraint firstItem="A8m-by-kFW" firstAttribute="leading" secondItem="c8E-Wb-olT" secondAttribute="leading" constant="38" id="ETD-Dz-1LY"/>
+                                <constraint firstItem="lRH-rK-KNJ" firstAttribute="centerY" secondItem="oAA-mM-sbc" secondAttribute="centerY" id="KCg-BZ-vKh"/>
                                 <constraint firstItem="BmS-Ao-y3V" firstAttribute="leading" secondItem="a9v-OX-GQj" secondAttribute="trailing" constant="10" id="LoN-ec-Vcq"/>
                                 <constraint firstItem="WkB-q0-plw" firstAttribute="leading" secondItem="c8E-Wb-olT" secondAttribute="leading" constant="38" id="NO0-AR-o7M"/>
                                 <constraint firstItem="mKg-yO-YLH" firstAttribute="top" secondItem="A8m-by-kFW" secondAttribute="bottom" constant="30" id="Q2I-11-4Ne"/>
@@ -126,6 +140,7 @@
                                 <constraint firstAttribute="trailing" secondItem="oAA-mM-sbc" secondAttribute="trailing" constant="38" id="X4d-M4-M1F"/>
                                 <constraint firstItem="A8m-by-kFW" firstAttribute="top" secondItem="oAA-mM-sbc" secondAttribute="bottom" constant="10" id="XWb-HA-HzZ"/>
                                 <constraint firstItem="M5v-0i-HIW" firstAttribute="top" secondItem="c8E-Wb-olT" secondAttribute="top" constant="50" id="bUS-e4-HEJ"/>
+                                <constraint firstItem="lRH-rK-KNJ" firstAttribute="trailing" secondItem="oAA-mM-sbc" secondAttribute="trailing" id="cM6-FO-rpJ"/>
                                 <constraint firstAttribute="trailing" secondItem="A8m-by-kFW" secondAttribute="trailing" constant="38" id="cqu-0p-M7w"/>
                                 <constraint firstAttribute="trailing" secondItem="B8H-XR-evy" secondAttribute="trailing" constant="38" id="egY-Yd-Af2"/>
                                 <constraint firstItem="mKg-yO-YLH" firstAttribute="centerX" secondItem="WkB-q0-plw" secondAttribute="centerX" id="fLG-0r-tkX"/>
@@ -162,7 +177,7 @@
         <image name="icon_login_phone" width="13.5" height="18.5"/>
         <image name="icon_login_pswd" width="15.5" height="16"/>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

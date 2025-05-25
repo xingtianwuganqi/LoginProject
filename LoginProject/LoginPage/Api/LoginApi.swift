@@ -25,23 +25,43 @@ extension LoginApi: BaseTargetType {
         var parameter: [String: Any] = APPCommonParam.apiBasicParameters()
         switch self {
         case .register(phone: let phone, pswd: let pswd, confirm: let confrim):
-            parameter["phoneNum"] = phone
+            if phone?.et.isValidEmail ?? false {
+                parameter["email"] = phone
+            }else{
+                parameter["phoneNum"] = phone
+            }
             parameter["password"] = pswd
             parameter["confirm_password"] = confrim
-            parameter["phone_type"] = PhoneType.getDeviceModel()
+            parameter["phone_type"] = PhoneTypeServer.getDeviceModel()
         case .login(phone: let phone, pswd: let pswd):
-            parameter["phoneNum"] = phone
+            if phone?.et.isValidEmail ?? false {
+                parameter["email"] = phone
+            }else{
+                parameter["phoneNum"] = phone
+            }
             parameter["password"] = pswd
-            parameter["phone_type"] = PhoneType.getDeviceModel()
+            parameter["phone_type"] = PhoneTypeServer.getDeviceModel()
         case .updateAccount(phone: let phone, pswd: let pswd, confirm: let confirm):
-            parameter["phoneNum"] = phone
+            if phone?.et.isValidEmail ?? false {
+                parameter["email"] = phone
+            }else{
+                parameter["phoneNum"] = phone
+            }
             parameter["password"] = pswd
             parameter["confirm_password"] = confirm
         case .getVerificationCode(phone: let phone):
-            parameter["phone"] = phone
+            if phone.et.isValidEmail {
+                parameter["email"] = phone
+            }else{
+                parameter["phone"] = phone
+            }
             parameter["code"] = Tool.shared.encryptionString(codeStr: CodeStr)
         case .checkCode(phone: let phone, code: let code):
-            parameter["phone"] = phone
+            if phone.et.isValidEmail {
+                parameter["email"] = phone
+            }else{
+                parameter["phone"] = phone
+            }
             parameter["code"] = code
         case .checkPhone(phone: let phone, code: let code):
             parameter["token"] = UserManager.shared.token

@@ -24,6 +24,7 @@ public class FindPageSecondController: BaseViewController,View {
     
     @IBOutlet weak var pswdEyeBtn: UIButton!
     @IBOutlet weak var confiEyeBtn: UIButton!
+    @IBOutlet weak var remindButton: UIButton!
     var pswdS1: String?
     var confrimS2: String?
     
@@ -147,6 +148,11 @@ public class FindPageSecondController: BaseViewController,View {
         self.reactor?.action.onNext(.changePswd(phone: account, pswd: pswd, confrim: confrim))
     }
     
+    @IBAction func remindButtonClick(_ sender: Any) {
+        let alert = UIAlertController.init(title: "提醒", message: "由于运营商原因，手机号可能无法获取验证码，请使用邮箱注册。", preferredStyle: .alert)
+        alert.addAction(UIAlertAction.init(title: "确定", style: .cancel))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension FindPageSecondController: UITextFieldDelegate {

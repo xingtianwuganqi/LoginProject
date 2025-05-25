@@ -28,6 +28,7 @@ public class RegisterViewController: BaseViewController,View {
     @IBOutlet weak var pswdIcon: UIImageView!
     @IBOutlet weak var confiIcon: UIImageView!
     
+    @IBOutlet weak var remindButton: UIButton!
     var phone: String
     var pswdS1: String?
     var confrimS2: String?
@@ -178,7 +179,7 @@ public class RegisterViewController: BaseViewController,View {
             self.view.xy_show("请输入账号")
             return
         }
-        guard account.et.isChinaMobile else {
+        guard account.et.isChinaMobile || account.et.isValidEmail else {
             self.view.xy_show("请输入有效账号")
             return
         }
@@ -229,12 +230,17 @@ public class RegisterViewController: BaseViewController,View {
             confirmTextField.text = symbol1
         }
     }
+    @IBAction func remindButtonClick(_ sender: Any) {
+        let alert = UIAlertController.init(title: "提醒", message: "由于运营商原因，手机号可能无法获取验证码导致无法注册，请使用邮箱注册。", preferredStyle: .alert)
+        alert.addAction(UIAlertAction.init(title: "确定", style: .cancel))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 extension RegisterViewController {
     public func bind(reactor: Reactor) {
         //观察电话是否为空
         let phoneObserable = phoneTextField.rx.text.share().map { (phone) in
-            (phone?.et.isChinaMobile ?? false)
+            (phone?.et.isChinaMobile ?? false) || (phone?.et.isValidEmail ?? false)
         }
         //密码是否为空
         let pswdObserable = pswdTextField.rx.text.share().map {

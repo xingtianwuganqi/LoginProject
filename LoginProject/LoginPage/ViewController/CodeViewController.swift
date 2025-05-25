@@ -23,6 +23,7 @@ public class CodeViewController: BaseViewController,View {
     
     @IBOutlet weak var phoneIcon: UIImageView!
     @IBOutlet weak var pswdIcon: UIImageView!
+    @IBOutlet weak var remindButton: UIButton!
     
     var fromType: CodeFromType?
     var phoneNum: String?
@@ -49,9 +50,9 @@ public class CodeViewController: BaseViewController,View {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         if self.fromType == .checkPhone {
-            self.navigationItem.title = "校验手机号"
+            self.navigationItem.title = "校验手机号或邮箱"
         }else if self.fromType == .bindPhone {
-            self.navigationItem.title = "绑定手机号"
+            self.navigationItem.title = "绑定手机号或邮箱"
         }else{
             self.navigationItem.title = "验证码"
         }
@@ -72,9 +73,9 @@ public class CodeViewController: BaseViewController,View {
         self.pswdIcon.image = LGResourceBundle.getImage("icon_login_pswd")
         
         if self.fromType == .checkPhone {
-            self.codeCheckBtn.setTitle("校验手机号", for: .normal)
+            self.codeCheckBtn.setTitle("校验手机号或邮箱", for: .normal)
         }else if self.fromType == .bindPhone {
-            self.codeCheckBtn.setTitle("绑定手机号", for: .normal)
+            self.codeCheckBtn.setTitle("绑定手机号或邮箱", for: .normal)
         }else{
             self.codeCheckBtn.setTitle("校验验证码", for: .normal)
         }
@@ -117,11 +118,11 @@ public class CodeViewController: BaseViewController,View {
         self.codeTextField.resignFirstResponder()
         
         guard let phone = self.phoneTextField.text,phone.count > 0 else {
-            self.view.xy_show("请输入手机号")
+            self.view.xy_show("请输入手机号或邮箱")
             return
         }
-        guard phone.et.isChinaMobile else {
-            self.view.xy_show("请输入正确的手机号")
+        guard phone.et.isValidEmail || phone.et.isChinaMobile else {
+            self.view.xy_show("请输入正确的手机号或邮箱")
             return
         }
         guard let code = self.codeTextField.text,code.count > 0 else {
@@ -146,21 +147,28 @@ public class CodeViewController: BaseViewController,View {
         self.codeTextField.resignFirstResponder()
         
         guard let phone = self.phoneTextField.text,phone.count > 0 else {
-            self.view.xy_show("请输入手机号")
+            self.view.xy_show("请输入手机号或邮箱")
             return
         }
-        guard phone.et.isChinaMobile else {
-            self.view.xy_show("请输入正确的手机号")
+
+        guard phone.et.isValidEmail || phone.et.isChinaMobile else {
+            self.view.xy_show("请输入正确的手机号或邮箱")
             return
         }
         self.getVerificationCode(phone: phone)
     }
+    @IBAction func remindButtonClick(_ sender: Any) {
+        let alert = UIAlertController.init(title: "提醒", message: "由于运营商原因，手机号可能无法获取验证码，请使用邮箱注册。", preferredStyle: .alert)
+        alert.addAction(UIAlertAction.init(title: "确定", style: .cancel))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
 extension CodeViewController {
     public func bind(reactor: Reactor) {
         //观察电话是否为空
         let phoneObserable = phoneTextField.rx.text.share().map { (phone) in
-            (phone?.et.isChinaMobile ?? false)
+            (phone?.et.isChinaMobile ?? false) || (phone?.et.isValidEmail ?? false)
         }
         //验证码是否为空
         let codeObserable = codeTextField.rx.text.share().map {
@@ -316,9 +324,9 @@ extension CodeViewController: UITextFieldDelegate {
     func loginBtnCanUse() {
         self.codeCheckBtn.isEnabled = true
         if self.fromType == .checkPhone {
-            self.codeCheckBtn.setTitle("校验手机号", for: .normal)
+            self.codeCheckBtn.setTitle("校验手机号或邮箱", for: .normal)
         }else if self.fromType == .bindPhone {
-            self.codeCheckBtn.setTitle("绑定手机号", for: .normal)
+            self.codeCheckBtn.setTitle("绑定手机号或邮箱", for: .normal)
         }else{
             self.codeCheckBtn.setTitle("校验验证码", for: .normal)
         }    }
@@ -330,9 +338,9 @@ extension CodeViewController: UITextFieldDelegate {
     func loginBtnCanUseNot() {
         self.codeCheckBtn.isEnabled = false
         if self.fromType == .checkPhone {
-            self.codeCheckBtn.setTitle("校验手机号", for: .normal)
+            self.codeCheckBtn.setTitle("校验手机号或邮箱", for: .normal)
         }else if self.fromType == .bindPhone {
-            self.codeCheckBtn.setTitle("绑定手机号", for: .normal)
+            self.codeCheckBtn.setTitle("绑定手机号或邮箱", for: .normal)
         }else{
             self.codeCheckBtn.setTitle("校验验证码", for: .normal)
         }    }

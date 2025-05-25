@@ -23,6 +23,7 @@
                 <outlet property="pswdEyeBtn" destination="pOe-CB-PFE" id="gco-2O-TBc"/>
                 <outlet property="pswdIcon" destination="mKg-yO-YLH" id="VRB-f6-zFd"/>
                 <outlet property="pswdTextField" destination="a9v-OX-GQj" id="JP5-eD-LrL"/>
+                <outlet property="remindButton" destination="Jh1-rJ-Dhd" id="5VC-Y2-CVi"/>
                 <outlet property="stackView" destination="3H9-uf-RoV" id="dc2-1A-YV4"/>
                 <outlet property="titleLab" destination="M5v-0i-HIW" id="uuy-vn-FY3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -53,13 +54,13 @@
                                         <constraint firstAttribute="height" constant="17" id="fuZ-S4-8nJ"/>
                                     </constraints>
                                 </imageView>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oAA-mM-sbc">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号或邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oAA-mM-sbc">
                                     <rect key="frame" x="66" y="114.5" width="310" height="25"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="1Jd-8B-3lR"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入6位或6位以上密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9v-OX-GQj">
                                     <rect key="frame" x="66" y="176" width="178" height="25"/>
@@ -157,6 +158,17 @@
                                         <action selector="confrimShowNum:" destination="-1" eventType="touchUpInside" id="1tS-Nz-xeD"/>
                                     </connections>
                                 </button>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jh1-rJ-Dhd">
+                                    <rect key="frame" x="336" y="107" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="HP4-bt-bF4"/>
+                                        <constraint firstAttribute="width" constant="40" id="LX5-HR-Yf2"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="remindButtonClick:" destination="-1" eventType="touchUpInside" id="FCy-F7-P4A"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
@@ -191,6 +203,8 @@
                                 <constraint firstItem="NKL-Te-fS8" firstAttribute="centerY" secondItem="2AN-r5-A1v" secondAttribute="centerY" id="oh5-Wt-o2X"/>
                                 <constraint firstItem="3H9-uf-RoV" firstAttribute="top" secondItem="Zph-ij-xJ0" secondAttribute="bottom" constant="64" id="p8O-BT-bLP"/>
                                 <constraint firstItem="Zph-ij-xJ0" firstAttribute="leading" secondItem="c8E-Wb-olT" secondAttribute="leading" constant="38" id="qli-NK-veW"/>
+                                <constraint firstItem="Jh1-rJ-Dhd" firstAttribute="trailing" secondItem="oAA-mM-sbc" secondAttribute="trailing" id="tH7-Ph-S3h"/>
+                                <constraint firstItem="Jh1-rJ-Dhd" firstAttribute="centerY" secondItem="oAA-mM-sbc" secondAttribute="centerY" id="vHF-cX-EDN"/>
                                 <constraint firstAttribute="trailing" secondItem="Zph-ij-xJ0" secondAttribute="trailing" constant="38" id="wLJ-La-Hkb"/>
                                 <constraint firstAttribute="bottom" secondItem="3H9-uf-RoV" secondAttribute="bottom" constant="40" id="xja-r7-3qA"/>
                                 <constraint firstItem="3H9-uf-RoV" firstAttribute="centerX" secondItem="c8E-Wb-olT" secondAttribute="centerX" id="zpl-14-kT9"/>

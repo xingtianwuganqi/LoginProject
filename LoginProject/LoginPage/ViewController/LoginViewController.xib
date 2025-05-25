@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,6 +22,7 @@
                 <outlet property="pswdIcon" destination="Uze-6y-4r0" id="d44-sg-SWf"/>
                 <outlet property="pswdTextField" destination="BWG-Se-dvR" id="Y9W-MB-ndS"/>
                 <outlet property="registerBtn" destination="FkK-oZ-v6c" id="gtB-6g-psH"/>
+                <outlet property="remindButton" destination="bzV-fM-e0q" id="nTW-y6-0LE"/>
                 <outlet property="stackView" destination="INr-1D-KsH" id="8c5-Fq-BLa"/>
                 <outlet property="titleLab" destination="yOn-iq-Fv2" id="MMD-g7-rBM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -33,7 +34,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylV-2q-DTa">
-                    <rect key="frame" x="0.0" y="48" width="414" height="456.5"/>
+                    <rect key="frame" x="0.0" y="96" width="414" height="456.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pmm-eI-ZMQ">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="456.5"/>
@@ -52,13 +53,13 @@
                                         <constraint firstAttribute="width" constant="17" id="glS-lK-fqw"/>
                                     </constraints>
                                 </imageView>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KxS-SM-h9E">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号或邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KxS-SM-h9E">
                                     <rect key="frame" x="66" y="114.5" width="310" height="25"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="Op6-R4-ukM"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入6位或6位以上密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWG-Se-dvR">
                                     <rect key="frame" x="66" y="176" width="270" height="25"/>
@@ -158,6 +159,17 @@
                                         <action selector="changeBtnClick:" destination="-1" eventType="touchUpInside" id="f26-Cn-RhC"/>
                                     </connections>
                                 </button>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzV-fM-e0q">
+                                    <rect key="frame" x="336" y="107" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="Z51-Mr-STa"/>
+                                        <constraint firstAttribute="height" constant="40" id="dga-yr-1aB"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="remindButtonClick:" destination="-1" eventType="touchUpInside" id="svM-Dr-Zo2"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
@@ -178,6 +190,7 @@
                                 <constraint firstItem="d1d-IZ-crv" firstAttribute="centerY" secondItem="Uze-6y-4r0" secondAttribute="centerY" id="QYU-wU-1LB"/>
                                 <constraint firstItem="nfR-gN-DDe" firstAttribute="top" secondItem="KxS-SM-h9E" secondAttribute="bottom" constant="10" id="SBH-KK-GUS"/>
                                 <constraint firstItem="KxS-SM-h9E" firstAttribute="leading" secondItem="EQE-fn-bLx" secondAttribute="trailing" constant="14" id="Sia-Eb-Qf6"/>
+                                <constraint firstItem="bzV-fM-e0q" firstAttribute="trailing" secondItem="KxS-SM-h9E" secondAttribute="trailing" id="V49-gZ-eAR"/>
                                 <constraint firstItem="Fid-0j-79m" firstAttribute="centerX" secondItem="Pmm-eI-ZMQ" secondAttribute="centerX" id="Wd5-5w-gUL"/>
                                 <constraint firstItem="yOn-iq-Fv2" firstAttribute="centerX" secondItem="Pmm-eI-ZMQ" secondAttribute="centerX" id="Y0u-yI-VTr"/>
                                 <constraint firstAttribute="bottom" secondItem="INr-1D-KsH" secondAttribute="bottom" constant="30" id="Yft-u4-xJn"/>
@@ -193,6 +206,7 @@
                                 <constraint firstItem="Fid-0j-79m" firstAttribute="top" secondItem="FkK-oZ-v6c" secondAttribute="bottom" constant="15" id="oPc-7R-hb8"/>
                                 <constraint firstItem="yOn-iq-Fv2" firstAttribute="top" secondItem="Pmm-eI-ZMQ" secondAttribute="top" constant="50" id="usr-VO-0Lc"/>
                                 <constraint firstItem="FkK-oZ-v6c" firstAttribute="top" secondItem="uqJ-xa-Ieg" secondAttribute="bottom" constant="15" id="x37-83-66F"/>
+                                <constraint firstItem="bzV-fM-e0q" firstAttribute="centerY" secondItem="KxS-SM-h9E" secondAttribute="centerY" id="xql-jQ-9Ic"/>
                                 <constraint firstItem="nfR-gN-DDe" firstAttribute="leading" secondItem="Pmm-eI-ZMQ" secondAttribute="leading" constant="38" id="xt4-lM-v9L"/>
                                 <constraint firstItem="uqJ-xa-Ieg" firstAttribute="leading" secondItem="Pmm-eI-ZMQ" secondAttribute="leading" constant="38" id="zqK-xa-AbS"/>
                             </constraints>
@@ -223,7 +237,7 @@
         <image name="icon_login_phone" width="13.5" height="18.5"/>
         <image name="icon_login_pswd" width="15.5" height="16"/>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

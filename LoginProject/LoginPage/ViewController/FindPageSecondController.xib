@@ -20,6 +20,7 @@
                 <outlet property="pswdEyeBtn" destination="pQ9-1Z-Er6" id="OEi-zR-1Ic"/>
                 <outlet property="pswdIcon" destination="BY6-H4-sSH" id="XPr-mD-JE1"/>
                 <outlet property="pswdTextField" destination="JTb-Qi-Dfx" id="wgf-vd-DEF"/>
+                <outlet property="remindButton" destination="yWj-g0-lca" id="MSC-3g-8Hn"/>
                 <outlet property="titleLab" destination="OJA-Hx-nYj" id="R1C-Mb-CLZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -116,6 +117,17 @@
                                         <action selector="confirmShowNum:" destination="-1" eventType="touchUpInside" id="76E-Uu-39S"/>
                                     </connections>
                                 </button>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWj-g0-lca">
+                                    <rect key="frame" x="306" y="106.5" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="Bvm-OR-Iqd"/>
+                                        <constraint firstAttribute="height" constant="40" id="fly-su-g8F"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="remindButtonClick:" destination="-1" eventType="touchUpInside" id="TI7-oc-Gtf"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
@@ -133,6 +145,8 @@
                                 <constraint firstItem="pQ9-1Z-Er6" firstAttribute="leading" secondItem="Oa0-IZ-ucK" secondAttribute="trailing" id="ahQ-uT-iXJ"/>
                                 <constraint firstAttribute="bottom" secondItem="USI-Pc-oXB" secondAttribute="bottom" constant="40" id="bzS-fQ-vRv"/>
                                 <constraint firstItem="OJA-Hx-nYj" firstAttribute="top" secondItem="4Kd-er-BDS" secondAttribute="top" constant="50" id="cR7-3N-hzs"/>
+                                <constraint firstItem="yWj-g0-lca" firstAttribute="trailing" secondItem="JTb-Qi-Dfx" secondAttribute="trailing" id="e5q-TQ-dcX"/>
+                                <constraint firstItem="yWj-g0-lca" firstAttribute="centerY" secondItem="JTb-Qi-Dfx" secondAttribute="centerY" id="eN7-6V-I9a"/>
                                 <constraint firstItem="jvO-WG-Ujv" firstAttribute="centerX" secondItem="BY6-H4-sSH" secondAttribute="centerX" id="hRS-21-AaD"/>
                                 <constraint firstItem="Oa0-IZ-ucK" firstAttribute="centerY" secondItem="jvO-WG-Ujv" secondAttribute="centerY" id="jeJ-XE-ozx"/>
                                 <constraint firstItem="BY6-H4-sSH" firstAttribute="top" secondItem="OJA-Hx-nYj" secondAttribute="bottom" constant="40" id="l9w-lq-SPe"/>

@@ -28,6 +28,7 @@ public class LoginViewController: BaseViewController,View {
     @IBOutlet weak var phoneIcon: UIImageView!
     @IBOutlet weak var pswdIcon: UIImageView!
     @IBOutlet weak var eyeBtn: UIButton!
+    @IBOutlet weak var remindButton: UIButton!
     
     public typealias Reactor = LoginViewReactor
     
@@ -232,7 +233,7 @@ public class LoginViewController: BaseViewController,View {
             self.view.xy_show("请输入账号")
             return
         }
-        guard account.et.isChinaMobile else {
+        guard account.et.isChinaMobile || account.et.isValidEmail else {
             self.view.xy_show("请输入有效账号")
             return
         }
@@ -244,6 +245,11 @@ public class LoginViewController: BaseViewController,View {
         self.reactor?.action.onNext(.loginAction(phone: account, pswd: pswd))
     }
     
+    @IBAction func remindButtonClick(_ sender: Any) {
+        let alert = UIAlertController.init(title: "提醒", message: "由于运营商原因，手机号可能无法获取验证码导致无法注册，请使用邮箱注册。已经使用手机号注册的用户可以继续使用手机号登录。", preferredStyle: .alert)
+        alert.addAction(UIAlertAction.init(title: "确定", style: .cancel))
+        self.present(alert, animated: true, completion: nil)
+    }
     @objc func popAction() {
         
         self.navigationController?.dismiss(animated: true, completion: nil)
@@ -280,7 +286,7 @@ extension LoginViewController {
     public func bind(reactor: LoginViewReactor) {
         //观察电话是否为空
         let phoneObserable = phoneTextField.rx.text.share().map { (phone) in
-            (phone?.et.isChinaMobile ?? false)
+            (phone?.et.isChinaMobile ?? false) || (phone?.et.isValidEmail ?? false)
         }
         //密码是否为空
         let pswdObserable = pswdTextField.rx.text.share().map {
