@@ -185,6 +185,7 @@ public class LoginViewController: BaseViewController,View {
     }
     
     func addGesture() {
+        guard navigationController?.viewControllers.first === self else { return }
         // 添加侧滑手势
         let edgePanGes = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(edgePanGestureAction(gesture:)))
         edgePanGes.edges = UIRectEdge.left
@@ -251,6 +252,11 @@ public class LoginViewController: BaseViewController,View {
         self.present(alert, animated: true, completion: nil)
     }
     @objc func popAction() {
+        if navigationController?.viewControllers.first !== self {
+            navigationController?.popViewController(animated: true)
+            return
+        }
+
         
         self.navigationController?.dismiss(animated: true, completion: nil)
         
