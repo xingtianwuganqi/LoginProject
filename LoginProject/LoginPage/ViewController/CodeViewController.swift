@@ -95,12 +95,17 @@ public class CodeViewController: BaseViewController,View {
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(scrollClick))
         tap.numberOfTouchesRequired = 1
         tap.numberOfTapsRequired = 1
+        tap.cancelsTouchesInView = false
+        tap.delegate = self
         self.view.addGestureRecognizer(tap)
         
-        // 验证手机号时手机号直接显示
+        // 校验时预填已有账号，同时允许输入手机号或邮箱。
+        self.phoneTextField.isUserInteractionEnabled = true
         if fromType == .checkPhone {
-            self.phoneTextField.text = self.phoneNum
-            self.phoneTextField.isUserInteractionEnabled = false
+            let account = [self.phoneNum, UserManager.shared.userInfo?.phone_number, UserManager.shared.userInfo?.email]
+                .compactMap { $0?.trimmingCharacters(in: .whitespacesAndNewlines) }
+                .first { !$0.isEmpty }
+            self.phoneTextField.text = account
         }
     }
     
@@ -130,10 +135,7 @@ public class CodeViewController: BaseViewController,View {
             return
         }
         if self.fromType == .checkPhone {
-            guard let phoneNum = phoneNum else {
-                return
-            }
-            self.reactor?.action.onNext(.checkPhone(phone: phoneNum, code: code))
+            self.reactor?.action.onNext(.checkPhone(phone: phone, code: code))
         }else if self.fromType == .bindPhone {
             self.reactor?.action.onNext(.bindPhone(phone: phone, code: code))
         }else{
@@ -347,7 +349,7 @@ extension CodeViewController: UITextFieldDelegate {
     
     func resignFirst() {
         self.phoneTextField.resignFirstResponder()
-        self.codeCheckBtn.resignFirstResponder()
+        self.codeTextField.resignFirstResponder()
     }
     
     func codeBtnNoUse(num: Int) {
@@ -366,4 +368,16 @@ extension CodeViewController: UITextFieldDelegate {
 
     }
 
+}
+
+// Background taps dismiss the keyboard without intercepting input or button taps.
+extension CodeViewController: UIGestureRecognizerDelegate {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        var touchedView = touch.view
+        while let view = touchedView {
+            if view is UIControl { return false }
+            touchedView = view.superview
+        }
+        return true
+    }
 }
