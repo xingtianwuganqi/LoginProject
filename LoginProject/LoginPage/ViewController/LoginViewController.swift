@@ -185,6 +185,7 @@ public class LoginViewController: BaseViewController,View {
     }
     
     func addGesture() {
+        // Pushed login screens use the navigation controller's interactive pop gesture.
         guard navigationController?.viewControllers.first === self else { return }
         // 添加侧滑手势
         let edgePanGes = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(edgePanGestureAction(gesture:)))
@@ -252,13 +253,12 @@ public class LoginViewController: BaseViewController,View {
         self.present(alert, animated: true, completion: nil)
     }
     @objc func popAction() {
-        if navigationController?.viewControllers.first !== self {
-            navigationController?.popViewController(animated: true)
-            return
+        guard let navigation = navigationController else { return }
+        if navigation.viewControllers.first === self {
+            navigation.dismiss(animated: true)
+        } else {
+            navigation.popViewController(animated: true)
         }
-
-        
-        self.navigationController?.dismiss(animated: true, completion: nil)
         
         // 测试代码
 //        self.navigationController?.dismiss(animated: true, completion: {
